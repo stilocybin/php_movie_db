@@ -1,13 +1,6 @@
 <?php
 
-# Filmkatalog, Website mit Verbindung zur MySQL-Datenbank
-# Liste der Filmtitel mit Auswahl zur Bearbeitung
-#
-# Autor: Michael Hassel
-# Email: hassel@mediakontur.de
-# Stand: 24.03.2021
-# Version: Basisversion
-# für Schulungszwecke
+
 
 # Sitzung überprüfen
 session_start();
