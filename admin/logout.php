@@ -1,12 +1,5 @@
 <?php
-# Filmkatalog, Website mit Verbindung zur MySQL-Datenbank
-# Logout
-#
-# Autor: Michael Hassel
-# Email: hassel@mediakontur.de
-# Stand: 24.03.2021
-# Version: Basisversion
-# für Schulungszwecke
+
 
 # Sitzung übernehmen
 session_start();
