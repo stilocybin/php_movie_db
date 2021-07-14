@@ -1,12 +1,5 @@
 <?php
-# Filmkatalog, Website mit Verbindung zur MySQL-Datenbank
-# Login
-#
-# Autor: Michael Hassel
-# Email: hassel@mediakontur.de
-# Stand: 24.03.2021
-# Version: Basisversion
-# für Schulungszwecke
+
 
 
 ########### Einbinden von Datenbankverbindung und Funktionen ###########
