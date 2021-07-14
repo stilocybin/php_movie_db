@@ -1,0 +1,495 @@
+
+/* 
+Styles für Hamburger-Navigation, Layout und Responsive
+*/
+
+@font-face {
+
+    font-family: 'MyKarma';
+    src: url(schriften/Karma-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* * wählt alle Elemente aus, margin für alle Elemente auf 0 */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/********************* Grundeinstellung Body **************************/
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    color: black;
+    background-color: whitesmoke;
+    padding: 0;
+    margin: auto;
+    max-width: 70rem;
+    /* hyphens ist nicht unbedingt in allen Browsern standardisiert, das macht die Sache nicht leicht :) */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+
+/******************** Überschriften ***********************/
+
+/* mehrere HTML-Elemente gleichzeitig selektieren */
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
+
+/* Größen und Abstände für Überschriften festlegen */
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin: 32px 0 24px 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 28px 0 18px 0;
+}
+
+h4 {
+    font-size: 1.25rem;
+    margin: 24px 0 16px 0;
+}
+
+
+/******************** Absätze ********************/
+
+/* Abstände und Zeilenhöhe */
+p {
+    margin: 20px 0 20px 0;
+    line-height: 1.5rem;
+}
+
+
+/******************* Links **********************/
+
+/* Farbe und Unterstrich */
+a {
+    color: black;
+    /* Unterstrich entfernen */
+    text-decoration: none;
+}
+
+/* sog. Pseudo-Klasse :hover für Mouse Over Events */
+a:hover {
+
+    color: rgb(238, 85, 51);
+    text-decoration: underline;
+}
+
+
+/******************** Textauszeichnungen ********************/
+
+strong, b {
+    font-weight: bold;
+    color: tomato;
+}
+
+em, i {
+    font-style: italic;
+    color: royalblue;
+    font-weight: bold;
+}
+
+
+/******************** Bilder **********************/
+
+img {
+    width: 300px;
+}
+
+
+/****************** Container *******************/
+
+/**************** header *************/
+
+header#header {
+
+    padding: 24px 32px;
+    color: rgb(219, 219, 219);
+    background-color: rgb(44, 44, 44);
+    /* logo und Überschrfit nebeneinander */
+    display: flex;
+    align-items: center;
+}
+
+#header h1 {
+
+    margin: 0;
+    font-family: 'MyKarma';
+    font-size: 2.6em;
+    text-shadow: 1px 1px 10px rgba(219, 219, 219, 0.698);
+}
+
+#logo {
+
+    width: 100px;
+    padding: 0;
+    margin-right: 42px;
+}
+
+#logo img {
+    width: 100%;
+}
+
+/* 
+Media-Breakpoint für Mobile Querformat 
+Logo und Überschrift kleiner
+*/
+@media (max-width: 740px){
+    
+    header#header {
+
+        padding: 24px 32px;
+    }
+    
+    #header h1 {
+    
+        font-size: 2em;
+    }
+    
+    #logo {
+
+        width: 80px;
+        margin-right: 32px;
+    }
+    
+}
+
+/* Logo, Überschrift und Abstände bei Mobile kleiner */
+@media (max-width: 420px){
+
+    header#header {
+        padding: 12px 16px;
+    }
+
+    #header h1 {
+        font-size: 1.4em;
+    }
+    
+    #logo {
+        width: 56px;
+        padding: 0;
+        margin-right: 24px;
+    }
+}
+
+/******* Navigation ********/
+
+#nav {
+
+    margin: 0;
+    padding: 0 32px;
+    background-color: rgb(44, 44, 44);
+    border-top: 1px solid rgb(190, 190, 190);
+    color: rgb(219, 219, 219);
+}
+
+#nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: rgb(44, 44, 44);
+}
+
+#nav li {
+    display: table-cell;
+    padding-right: 18px;
+}
+
+
+#nav a {
+    display: block;
+    padding: 16px;
+    color: rgb(219, 219, 219);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#nav a:hover {
+    color: rgb(238, 85, 51);
+    background-color: rgb(195, 195, 195);
+    text-decoration: none;
+}
+
+#nav a.active {
+    color: rgb(238, 85, 51);
+    background-color: rgb(155 202 220);
+    text-decoration: none;
+}
+
+/************ Hamburger Navigation *************/
+
+/* 
+Label der Checkbox in HTML 
+Styles für Hambuger-Icon
+*/
+.label-hamburger { 
+
+    /* standardmäßig ausgeblendet (Desktop), wird im @media-Breakpoint eingeblendet */
+    display: none;
+
+    background: #555; 
+    width: 65px; 
+    height: 50px; 
+
+    /* Linien im Label sind absolute, deshalb ist Label relative */
+    position: relative; 
+
+    float: right;
+    border-radius: 4px; 
+}
+
+/* die drei Linien im Label */
+.line { 
+    position: absolute; 
+    left:10px;
+    height: 4px; width: 45px; 
+    background: #fff; border-radius: 2px;
+    display: block; 
+    transition: 0.2s; 
+}
+.line:nth-child(1) { top: 12px; }
+.line:nth-child(2) { top: 24px; }
+.line:nth-child(3) { top: 36px; }
+
+/* 
+Checkbox dauerhaft ausblenden 
+*/
+#checkbox-hamburger {
+    display:none
+}
+
+/* 
+bei Klick auf Hamburger-Icon Navigation einblenden 
+*/
+#checkbox-hamburger:checked + .label-hamburger + #nav { 
+    display: block;
+}
+
+/* Linien im Hamburger-Symbol in ein liegendes Kreuz transformieren */
+#checkbox-hamburger:checked + .label-hamburger > .line:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 24px;
+}
+ 
+ #checkbox-hamburger:checked + .label-hamburger > .line:nth-child(2) {
+    opacity:0;
+}
+ 
+ #checkbox-hamburger:checked + .label-hamburger > .line:nth-child(3) {
+    transform: rotate(45deg);
+    top: 24px;
+}
+
+
+/* 
+Media-Breakpoint für Mobile Querformat 
+Abstände der Navigation-Punkte kleiner
+*/
+@media (max-width: 740px){
+    
+    #nav li {
+        padding-right: 0;    
+    }
+
+}
+
+/* 
+Mediaquery Breakpoint zum Umschreiben von CSS 
+Displays bis maximal 420 Pixel Breite
+*/
+@media (max-width: 420px){
+
+    /* Navigation bei Mobile ausblenden und Hamburger-Icon einblenden */
+    #nav {
+        padding: 0;
+        display: none;
+        position: relative;
+    }
+
+    .label-hamburger { 
+        display: block;
+    }
+          
+    #nav ul {
+        margin-right: 0;
+        position: absolute;
+        top: 0;
+        width: 75%;
+    }
+
+    /* Listenpunkte bei Mobile untereinander */
+    #nav li {
+        display: block;
+        padding-right: 0;    
+    }
+}
+
+
+/******** Gesamtinhalt ********/
+
+/* Container umschliesst main und aside in HTML */
+#content {
+
+    /* Flex einschalten */
+    display: flex;
+    /* main und aside nebeneinander */
+    flex-direction: row;
+    /* main und aside gleiche Höhe */
+    align-items: stretch;
+    /* kein Umbruch */
+    flex-wrap: nowrap;
+}
+
+/* 
+ASide-Container unter Main 
+bei Hochkant- und Querformat
+*/
+@media (max-width: 740px){
+
+    #content {
+        display: block;
+        /* flex-direction: column; */
+    }
+}
+
+
+/******** Hauptinhalt ********/
+
+/* main ist Flex-item von #content */
+#main {
+    /* 
+    Flex-Item-Eigenschaft 
+    flex teilt den verfügbaren Platz von #content auf
+    #main nimmt sich 3 Teile Platz, weiter unten #aside nimmt sich 1 Teil Platz
+    */
+    flex: 3;
+    margin: 0;
+    padding: 32px;
+    background-color: rgb(219, 219, 219);
+
+}
+
+/* Container für alle Produkte */
+#product-container {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Produkt-Item-Container */
+.product {
+
+    width: 30%;
+    margin-bottom: 32px;
+}
+
+.product h3 {
+    font-size: 1.2rem;
+    margin-top: 9px;
+    margin-bottom: 6px
+}
+
+.product p {
+    margin-top: 6px;
+    margin-bottom: 6px
+}
+
+.product img {
+    /*height: 317px;*/
+}
+
+/* 
+media-Breakpoint für Mobile
+Abstände kleiner, zwei Produktbilder nebeneinander
+*/
+@media (max-width: 420px){
+
+    #main {
+        padding: 8px;
+    }
+
+    .product {
+        width: 48%;
+        margin-bottom: 12px;
+    }
+}
+
+.product img {
+
+    width: 100%;
+}
+
+.product figcaption {
+
+    padding: 6px 0;
+}
+
+
+/******** Infobereich ********/
+
+/* #aside ist auch Flex-Item von #content */
+#aside {
+    /* #aside nimmt sich 1 Teil Platz, #main hat 3 (insgesamt 4) */
+    flex: 1;
+    margin: 0;
+    padding: 32px;
+    background-color: rgb(195, 195, 195);
+}
+
+#aside ul {
+    margin: 0;
+    margin-bottom: 24px;
+    padding: 0;
+    list-style-type: none;
+    /*font-size: 1.2em;*/
+}
+
+/* 
+media-Breakpoint für Mobile
+Abstände kleiner
+*/
+@media (max-width: 420px){
+
+    #aside {
+        padding: 8px;
+    }
+}
+
+
+/******** Footer ********/
+
+#footer {
+    margin: 0;
+    padding: 32px;
+    background-color: rgb(44, 44, 44);
+    color: rgb(219, 219, 219);
+}
+
+/* 
+media-Breakpoint für Mobile
+Abstände kleiner
+*/
+@media (max-width: 420px){
+
+    #footer {
+        padding: 24px 8px;
+    }
+}
+
+

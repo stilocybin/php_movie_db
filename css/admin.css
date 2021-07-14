@@ -1,0 +1,275 @@
+/* 
+
+Filmkatalog mit Verbindung zur MySQL-Datenbank
+Admin-Bereich für Filmtitel
+
+
+*/
+
+
+/******* Body ********/
+
+body {
+
+	font-size: 1.1em; 
+	font-family: Palatino,"Palatino Linotype",serif; 
+	color: #333538; 
+	margin: 0px; 
+	padding: 20px; 
+	/* http://lea.verou.me/css3patterns */
+	background-color: rgb(187, 187, 187);
+	background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
+	background-size: 50px 50px;
+	/* Pattern Ende */
+}
+
+
+/******* Links ********/
+
+a {
+	
+	color: #4444CC;
+}
+
+a:hover {
+	
+	color: #8888DD;
+}
+
+/******* Überschriften ********/
+
+h1 { 
+	font-size: 2em; 
+	font-weight:bold; 
+	margin-top: 0.2em; 
+	margin-bottom: 0.1em; 
+}
+
+h2 { 
+	font-size: 1.6em; 
+	font-weight:bold;  
+}
+
+h3 { 
+	font-size: 1.2em; 
+	font-weight:bold;  
+}
+
+
+/******* Container ********/
+
+#header { 
+	background-color: rgba(255, 85, 0, 0.94);
+	margin-bottom: 12px;
+}
+
+#content { 
+	min-height: 450px; 
+	background-color: rgba(250,250,250, 0.94); 
+}
+
+.border { 
+	margin-left: auto; 
+	margin-right: auto; 
+	padding: 35px 40px 15px 40px; 
+	width: 80%; border: 1px solid rgb(189, 198, 215); 
+	border-radius: 20px; 
+	min-width: 400px; 
+	max-width: 900px;
+}
+
+/******* Formular ********/
+
+#formular {
+
+	/* font-size: 12px; */
+    margin-bottom: 30px;
+}
+
+.form_label, .form_input, .form_input_select, .form_text {
+    display: block;
+}
+
+.form_input {
+	width: 50%;
+	margin-top: 4px;
+	margin-bottom: 16px;
+	font-size: 0.9em;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	border-radius: 4px; 
+	padding: 0.15em 0.5em;
+	border: 1px solid #333333;
+}
+
+.form_input_select {
+
+}
+
+.form_input_login {
+	width: 35%;
+}
+
+.form_text {
+
+	width: 50%;
+	height: 8.25em;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.form_button {
+
+	display: inline;
+	width: 20%;
+	cursor: pointer;
+}
+
+.form_button_right {
+
+	margin-left: 10%;
+
+}
+
+.form_button_right_upload {
+
+	margin-left: 10%;
+}
+
+.form_option {
+
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.form_checkbox {
+
+
+}
+
+#section_select , #section_input, #section_submit {
+    
+    margin-bottom: 30px;
+}
+
+.form_input_file {
+
+	cursor: pointer;
+        border: 1px solid #dddddd;
+}
+
+
+/******* Tabelle ********/
+
+.liste {
+    
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.liste th, td {
+    border: 1px solid rgb(189, 198, 215);
+    text-align: left;
+    padding: 8px 15px;
+    
+}
+
+.liste th{
+    
+    background-color: #DDDDDD;
+}
+
+
+/******* Hauptnavigation ********/
+
+#adminmenu {
+
+	width: 100%;
+	/* background-color: rgba(255, 105, 20, 0.94); */
+	padding: 0px 0px;
+	font-weight: bold;
+	font-size: 1.2em;
+	/* border: 1px solid #666666; */
+	/* margin-bottom: 10px; */
+	border-radius: 4px; 
+}
+#adminmenu a{
+	
+	color: skyblue;
+	/* font-size: 12px; */
+	text-decoration: none;
+}
+#adminmenu a:hover{
+	
+	/* font-size: 12px; */
+	text-decoration: underline;
+}
+#adminmenu ul {
+
+	margin: 0px;
+	padding: 0px;
+}
+#adminmenu li {
+
+	padding: 6px 8px;
+	display: inline;
+	border: 0px solid #333538;
+	border-radius: 8px; 
+	background-color: #0D58A6;
+	/* cursor: pointer; */
+}
+
+
+/******* Sonstiges ********/
+
+.linkneu {
+	
+	font-weight: bold;
+}
+
+.fehler {
+	
+	color: rgb(255, 85, 0);
+	font-weight: bold;
+}
+
+.loeschen {
+	
+	color: rgb(255, 85, 0);
+	font-weight: bold;
+}
+
+.adminbild {
+
+  float: left;
+  margin-right: 30px;
+  width: 30%;
+}
+
+.datensatz {
+
+  margin-bottom: 50px;
+}
+
+.clearer {
+  clear: both;
+  height : 0px;
+  margin-bottom: 50px;
+}
+
+.wichtig { 
+	color: rgb(255, 85, 0) 
+}
+
+.fett { 
+	font-weight: bold;  
+}
+
+
+
+
+
+
+
+
+
+
